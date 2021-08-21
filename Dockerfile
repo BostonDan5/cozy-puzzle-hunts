@@ -1,0 +1,8 @@
+FROM python:3.7.3
+
+ENV DJANGO_SETTINGS_MODULE=cph.settings
+ENV PYTHONPATH=.
+
+WORKDIR /app
+
+COPY . /app
