@@ -1,0 +1,10 @@
+{
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.colorCustomizations": {
+        "tab.activeBorder": "#0A84FF",
+        "tab.activeModifiedBorder": "#ff0a0e",
+        "tab.inactiveModifiedBorder": "#ff0a0e",
+        "tree.indentGuidesStroke": "#00ff00"
+    },
+    "workbench.tree.indent": 20
+}

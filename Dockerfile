@@ -5,4 +5,20 @@ ENV PYTHONPATH=.
 
 WORKDIR /app
 
-COPY . /app
+# Create the virtual environment, and put it on the PATH for all subsequent commands
+ENV VIRTUAL_ENV=/app/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY ./cph /app/cph
+
+WORKDIR /app/cph
+
+# port where the Django app runs  
+# EXPOSE 8000  
+
+CMD [ "django-admin.py", "runserver", "0.0.0.0:8000" ]
