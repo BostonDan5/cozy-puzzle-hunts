@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -122,5 +123,8 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# An example of a secret key:
 # SECRET_KEY = 'django-insecure-21&#$4jy#^20@xhi@ui=b#gm7j3z=sslzy5_&3*#a9_blr9gb&'
-# Dockerfile adds the actual secret key
+# For local development, try reading from an environment variable
+SECRET_KEY = os.getenv('SECRET_KEY')
+# Dockerfile adds a different secret key when building Docker locally
